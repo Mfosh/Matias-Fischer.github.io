@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matias Fischer - Technical Sound Designer</title>
+    <title>Matias Fischer | Technical Sound Designer</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Syncopate:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --bg-deep: #0d0d0d;
-            --card-dark: #161616;
-            --accent-red: #8b0000; /* Rojo Granate Profundo */
+            --bg-deep: #0a0a0a;
+            --card-dark: #141414;
+            --accent-red: #8b0000; /* Deep Crimson - AAAJ Identity */
             --pure-white: #ffffff;
-            --text-main: #e2e8f0;
-            --text-dim: #94a3b8;
+            --text-main: #e5e7eb;
+            --text-dim: #9ca3af;
+            --text-dark: #111111;
         }
 
         * { box-sizing: border-box; }
@@ -43,37 +44,38 @@
 
         #wrapper {
             width: 90%;
-            max-width: 850px;
+            max-width: 950px;
             margin: 0 auto;
             padding: 60px 0;
             text-align: center;
         }
 
+        header { margin-bottom: 4rem; }
+
         h1 {
             font-family: 'Syncopate', sans-serif;
-            font-size: clamp(1.8rem, 5vw, 2.5rem);
-            letter-spacing: 4px;
-            margin-bottom: 0.5rem;
-            color: #fff;
+            font-size: clamp(2rem, 6vw, 3rem);
+            letter-spacing: 5px;
+            margin: 0;
+            color: var(--pure-white);
         }
 
         .role {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--accent-red);
             text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-top: 1.5rem;
+            letter-spacing: 4px;
+            margin-top: 1rem;
             font-weight: 700;
         }
 
         .summary {
             font-size: 1rem;
             color: var(--text-dim);
-            max-width: 650px;
-            margin: 2.5rem auto 4rem auto;
+            max-width: 700px;
+            margin: 2.5rem auto;
         }
 
-        /* MEDIA */
         .video-container {
             position: relative;
             padding-bottom: 56.25%; 
@@ -83,7 +85,7 @@
             background: #000;
             box-shadow: 0 20px 50px rgba(0,0,0,0.5);
             margin-bottom: 4rem;
-            border: 1px solid #333;
+            border: 1px solid #222;
         }
 
         .video-container iframe {
@@ -93,7 +95,6 @@
             border: 0;
         }
 
-        /* BOTONES */
         .button-group {
             display: flex;
             justify-content: center;
@@ -103,40 +104,30 @@
         }
 
         .btn {
-            padding: 12px 30px;
+            padding: 14px 30px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
-            transition: 0.3s;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
+            transition: 0.3s;
+            border: 2px solid transparent;
         }
 
-        .btn-primary { 
-            background-color: var(--accent-red); 
-            color: white;
-            box-shadow: 0 4px 15px rgba(139, 0, 0, 0.4);
-        }
-
-        .btn-primary:hover {
-            filter: brightness(1.2);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary { border: 2px solid #333; color: #fff; }
+        .btn-primary { background: var(--accent-red); color: white; }
+        .btn-primary:hover { filter: brightness(1.2); transform: translateY(-2px); }
+        .btn-secondary { border-color: #333; color: white; }
         .btn-secondary:hover { border-color: var(--accent-red); color: var(--accent-red); }
 
-        /* SECCIONES */
         .section-title {
             font-family: 'Syncopate', sans-serif;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 4px;
-            color: #fff;
+            color: var(--pure-white);
             margin: 6rem 0 3rem 0;
         }
 
-        /* SKILLS CON LOGOS */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -147,65 +138,78 @@
             background: var(--card-dark);
             padding: 30px 20px;
             border-radius: 12px;
-            transition: 0.3s;
             border: 1px solid #222;
+            transition: 0.3s;
         }
 
         .skill-card:hover { border-color: var(--accent-red); transform: translateY(-5px); }
-        
-        .skill-icon {
-            font-size: 2rem;
-            color: var(--accent-red);
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .skill-card h3 { font-size: 0.7rem; color: #666; margin: 0 0 5px 0; text-transform: uppercase; }
+        .skill-icon { font-size: 2rem; color: var(--accent-red); margin-bottom: 15px; display: block; }
+        .skill-card h3 { font-size: 0.7rem; color: #555; margin-bottom: 5px; text-transform: uppercase; }
         .skill-card p { font-size: 0.95rem; margin: 0; font-weight: 600; color: #fff; }
 
-        /* PROYECTOS */
-        .project-highlight {
-            text-align: left;
-            background: var(--pure-white);
-            padding: 40px;
-            border-radius: 16px;
-            color: #1a1a1a;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.4);
-            margin-bottom: 2.5rem;
-            border-top: 10px solid var(--accent-red);
-            position: relative;
-        }
-
-        .project-highlight h3 { color: var(--accent-red); font-size: 1.8rem; margin: 0 0 15px 0; }
-        .badge {
-            position: absolute; top: 40px; right: 40px;
-            background: var(--accent-red); color: #fff;
-            padding: 5px 15px; border-radius: 20px;
-            font-size: 0.7rem; font-weight: bold;
-        }
-
-        .project-highlight ul { padding-left: 20px; font-size: 0.95rem; color: #444; }
-        .project-highlight li { margin-bottom: 8px; }
-
-        .project-small-grid {
+        /* FEATURED PROJECT: DANCING FORWARD - IMAGE RIGHT */
+        .featured-card {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1.2fr 1fr; /* Text left, Image right */
+            gap: 40px;
+            background: var(--pure-white);
+            padding: 45px;
+            border-radius: 20px;
+            text-align: left;
+            color: var(--text-dark);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            border-top: 10px solid #000;
+            margin-bottom: 2.5rem;
+            position: relative; /* For badge positioning */
+            align-items: center; /* Vertical Center */
+        }
+
+        .featured-card h3 { color: var(--accent-red); font-size: 2rem; margin-top: 0; }
+        
+        /* Badge at top-right */
+        .badge {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            background: var(--accent-red);
+            color: white;
+            font-size: 0.7rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .featured-card ul { padding-left: 20px; margin: 20px 0; }
+        .featured-card li { margin-bottom: 10px; font-size: 0.95rem; color: #333; }
+
+        .gameplay-img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 2px solid var(--accent-red);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 20px;
             text-align: left;
         }
 
-        .project-small-card {
+        .small-card {
             background: var(--card-dark);
-            padding: 30px;
-            border-radius: 12px;
-            border-left: 4px solid var(--accent-red);
+            padding: 35px;
+            border-radius: 16px;
+            border-left: 5px solid var(--accent-red);
         }
 
-        .project-small-card h4 { margin: 0 0 10px 0; color: #fff; font-size: 1.1rem; }
-        .project-small-card ul { padding-left: 18px; color: var(--text-dim); font-size: 0.85rem; margin: 0; }
+        .small-card h4 { margin: 0 0 15px 0; font-size: 1.2rem; color: var(--pure-white); }
+        .small-card ul { padding-left: 18px; margin: 0; color: var(--text-dim); font-size: 0.85rem; }
+        .small-card li { margin-bottom: 8px; }
 
-        /* CÓDIGO */
-        .code-block { text-align: left; margin: 2rem 0; }
+        .code-container { text-align: left; margin: 2.5rem 0; }
         .code-header {
             background: #000;
             padding: 12px 20px;
@@ -230,7 +234,12 @@
         .c-ty { color: #4ec9b0; } 
         .c-cm { color: #6a9955; } 
 
-        footer { padding: 6rem 0; opacity: 0.4; font-size: 0.8rem; }
+        footer { padding: 6rem 0; opacity: 0.3; font-size: 0.8rem; }
+
+        @media (max-width: 850px) {
+            .featured-card { grid-template-columns: 1fr; }
+            .project-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -242,7 +251,7 @@
             <h1>MATIAS FISCHER</h1>
             <div class="role">Technical Sound Designer</div>
             <p class="summary">
-                Bachelor's Degree in Video Game Development specializing in adaptive audio architecture, middleware integration, and performance optimization for interactive media.
+                Bachelor's Degree in Video Game Development specializing in adaptive audio architecture, middleware integration (FMOD/Wwise), and performance optimization for interactive media.
             </p>
         </header>
 
@@ -252,7 +261,7 @@
 
 	<div class="button-group">
     		<a href="http://www.linkedin.com/in/matias-fischer-87416620a" class="btn btn-primary" target="_blank">LinkedIn</a>
-    		<a href="Matias_Fischer_Technical_SoundDesigner_CV.pdf" class="btn btn-secondary" download>Download CV</a>
+   		 <a href="cv-matias-fischer.pdf" class="btn btn-secondary" download>Download CV</a>
     		<a href="https://fivekeysstudio.itch.io/" class="btn btn-secondary" target="_blank">Itch.io</a>
     		<a href="mailto:fischermatias16@gmail.com" class="btn btn-secondary">Email</a>
 	</div>
@@ -281,92 +290,89 @@
             </div>
         </div>
 
-        <div class="section-title">Featured Projects</div>
+        <div class="section-title">Featured Work</div>
 
-        <div class="project-highlight">
-            <span class="badge">VERTICAL SLICE</span>
-            <h3>Dancing Forward</h3>
-            <p><strong>Technical Sound Lead & Composer.</strong> A 2D rhythm-platformer built in Unity where gameplay logic drives the audio engine via FMOD callbacks.</p>
-            <ul>
-                <li><strong>Adaptive Music:</strong> Designed a multi-layer intensity system using FMOD transition regions and logic markers.</li>
-                <li><strong>Rhythm Sync:</strong> Leveraged FMOD timeline callbacks to synchronize environmental VFX with the soundtrack's BPM.</li>
-                <li><strong>C# Integration:</strong> Built custom wrappers to pass gameplay variables (combo meter, health) into FMOD parameters in real-time.</li>
-            </ul>
-            <a href="https://fivekeysstudio.itch.io/dancing-forward" target="_blank" class="btn btn-primary" style="margin-top: 20px; font-size: 0.75rem;">Play on Itch.io</a>
+        <div class="featured-card">
+            <span class="badge">Vertical Slice</span>
+            
+            <div class="content">
+                <h3>Dancing Forward</h3>
+                <p><b>Lead Technical Sound & Composer.</b> A 2D rhythm-platformer built in Unity where gameplay logic drives the audio engine via FMOD callbacks.</p>
+                <ul>
+                    <li><b>Adaptive Music:</b> Designed a multi-layered intensity system using transition regions and logic markers in FMOD.</li>
+                    <li><b>Rhythm Sync:</b> Frame-accurate synchronization of environmental VFX with BPM via C# timeline callbacks.</li>
+                    <li><b>C# Integration:</b> Custom wrappers passing real-time gameplay variables (combo, health) to FMOD parameters.</li>
+                </ul>
+                <a href="https://fivekeysstudio.itch.io/dancing-forward" class="btn btn-primary" style="font-size: 0.7rem; padding: 10px 20px;">Play on Itch.io</a>
+            </div>
+
+            <div class="visual">
+                <img src="dancing-forward-gameplay.png" alt="Dancing Forward Gameplay" class="gameplay-img">
+            </div>
         </div>
 
-        <div class="project-small-grid">
-            <div class="project-small-card">
+        <div class="project-grid">
+            <div class="small-card">
                 <h4>Interactive Audio (Wwise)</h4>
                 <ul>
-                    <li><strong>Dynamic Weather:</strong> Implemented complex RTPC curves to drive low-pass filters and ambient density.</li>
-                    <li><strong>Hierarchical Design:</strong> Organized non-linear Actor-Mixer hierarchies using Random Containers.</li>
+                    <li><b>Dynamic Layering:</b> Musical intensity scaling via real-time layer blending based on enemy count.</li>
+                    <li><b>Weather Systems:</b> Complex RTPC curves controlling low-pass filters and ambient density.</li>
+                    <li><b>Spatial Logic:</b> Implementation of Reverb Zones and state-driven acoustic transitions.</li>
                 </ul>
             </div>
-            <div class="project-small-card">
+            <div class="small-card">
                 <h4>Mobile Optimization</h4>
                 <ul>
-                    <li><strong>Native Implementation:</strong> Used Unity Native Audio to minimize latency on low-end mobile devices.</li>
-                    <li><strong>Memory Profile:</strong> Optimized SoundBank allocation to maintain a minimal runtime footprint.</li>
+                    <li><b>Native Audio:</b> Low-latency implementation using Unity native buffers for mobile devices.</li>
+                    <li><b>Memory Profile:</b> Optimized SoundBank allocation to maintain minimal runtime memory footprint.</li>
                 </ul>
             </div>
         </div>
 
         <div class="section-title">Technical Case Studies (C#)</div>
 
-        <div style="text-align: left; color: var(--text-dim); margin-bottom: 15px; font-size: 0.9rem;">
-            <strong>Memory Management:</strong> Pre-instantiating sources at Awake to prevent runtime CPU spikes during intense gameplay.
-        </div>
-        <div class="code-block">
-            <div class="code-header">AudioSource Pooling System</div>
+        <div class="code-container">
+            <div class="code-header">Memory Optimization: AudioSource Pooling</div>
             <div class="code-body">
-<code><span class="c-kw">private void</span> CreateAudioSourcePool() {
+<code><span class="c-cm">// Pre-instantiating sources at Awake to prevent runtime CPU spikes</span>
+<span class="c-kw">private void</span> CreateAudioSourcePool() {
     sourcePool = <span class="c-kw">new</span> <span class="c-ty">Queue</span>&lt;<span class="c-ty">AudioSource</span>&gt;();
     <span class="c-kw">for</span> (<span class="c-kw">int</span> i = 0; i < poolSize; i++) {
         <span class="c-ty">AudioSource</span> src = gameObject.AddComponent&lt;<span class="c-ty">AudioSource</span>&gt;();
-        src.playOnAwake = <span class="c-kw">false</span>;
         sourcePool.Enqueue(src);
     }
 }</code>
             </div>
         </div>
 
-        <div style="text-align: left; color: var(--text-dim); margin-bottom: 15px; font-size: 0.9rem;">
-            <strong>Search Optimization:</strong> Using HashMaps to achieve O(1) time complexity when triggering high-frequency SFX.
-        </div>
-        <div class="code-block">
-            <div class="code-header">Dictionary-based Sound Lookup</div>
+        <div class="code-container">
+            <div class="code-header">Efficiency: Dictionary-based Sound Lookup</div>
             <div class="code-body">
-<code><span class="c-kw">private void</span> SetupSoundLookup() {
+<code><span class="c-cm">// O(1) Search Complexity for high-frequency triggering</span>
+<span class="c-kw">private void</span> SetupSoundLookup() {
     soundLookup = <span class="c-kw">new</span> <span class="c-ty">Dictionary</span>&lt;<span class="c-kw">string</span>, <span class="c-ty">Sound</span>&gt;();
     <span class="c-keyword">foreach</span> (<span class="c-kw">var</span> sound <span class="c-kw">in</span> sounds) {
-        <span class="c-keyword">if</span> (!soundLookup.ContainsKey(sound.name))
-            soundLookup.Add(sound.name, sound);
+        soundLookup.Add(sound.name, sound);
     }
 }</code>
             </div>
         </div>
 
-        <div style="text-align: left; color: var(--text-dim); margin-bottom: 15px; font-size: 0.9rem;">
-            <strong>Voice Management:</strong> Implementation of a voice stealing fallback to ensure the most relevant sounds are always audible.
-        </div>
-        <div class="code-block">
-            <div class="code-header">Playback & Voice Stealing Logic</div>
+        <div class="code-container">
+            <div class="code-header">Concurrency: Voice Stealing Logic</div>
             <div class="code-body">
-<code><span class="c-kw">public void</span> Play(<span class="c-kw">string</span> name) {
+<code><span class="c-cm">// Fallback to stealing the oldest active voice if pool is exhausted</span>
+<span class="c-kw">public void</span> Play(<span class="c-kw">string</span> name) {
     <span class="c-kw">if</span> (!soundLookup.TryGetValue(name, <span class="c-kw">out</span> <span class="c-ty">Sound</span> s)) <span class="c-kw">return</span>;
-
-    <span class="c-cm">// Fallback to stealing the oldest active voice if pool is empty</span>
     <span class="c-ty">AudioSource</span> src = GetSourceFromPool();
     src.clip = s.clip;
-    src.volume = s.volume;
     src.Play();
 }</code>
             </div>
         </div>
 
         <footer>
-            &copy; 2026 Matias Fischer &bull; Buenos Aires, Argentina
+            &copy; 2026 Matias Fischer • Buenos Aires, Argentina
         </footer>
     </div>
 </body>
